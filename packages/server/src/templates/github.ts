@@ -1,4 +1,5 @@
 import { parse } from "toml";
+import { thePowerChatTemplate, thePowerChatCompose } from "./local_thepowerchat";
 
 /**
  * Complete template interface that includes both metadata and configuration
@@ -61,6 +62,10 @@ export async function fetchTemplatesList(
 			throw new Error(`Failed to fetch templates: ${response.statusText}`);
 		}
 		const templates = (await response.json()) as TemplateMetadata[];
+		
+        // Inject ThePowerChat
+        templates.unshift(thePowerChatTemplate.metadata);
+
 		return templates.map((template) => ({
 			id: template.id,
 			name: template.name,
@@ -83,6 +88,13 @@ export async function fetchTemplateFiles(
 	templateId: string,
 	baseUrl = "https://templates.dokploy.com",
 ): Promise<{ config: CompleteTemplate; dockerCompose: string }> {
+    if (templateId === "thepowerchat") {
+        return {
+            config: thePowerChatTemplate,
+            dockerCompose: thePowerChatCompose
+        };
+    }
+
 	try {
 		// Fetch both files in parallel
 		const [templateYmlResponse, dockerComposeResponse] = await Promise.all([
