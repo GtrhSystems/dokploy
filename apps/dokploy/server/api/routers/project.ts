@@ -56,6 +56,14 @@ import {
 
 export const projectRouter = createTRPCRouter({
 	create: protectedProcedure
+		.meta({
+			openapi: {
+				method: "POST",
+				path: "/project",
+				tags: ["project"],
+				summary: "Create a new project",
+			},
+		})
 		.input(apiCreateProject)
 		.mutation(async ({ ctx, input }) => {
 			try {

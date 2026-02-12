@@ -9,7 +9,7 @@ export const thePowerChatTemplate: CompleteTemplate = {
     version: "latest",
     logo: "https://avatars.githubusercontent.com/u/161623?s=200&v=4",
     links: {
-      github: "https://github.com/GtrhSystems/telechat",
+      github: "https://github.com/GtrhSystems/teleya",
       website: "https://thepowerchat.com",
       docs: "https://chatwoot.com/docs"
     },
@@ -20,7 +20,8 @@ export const thePowerChatTemplate: CompleteTemplate = {
     postgres_password: "${password:16}",
     redis_password: "${password:16}",
     secret_key_base: "${random:64}",
-    postgres_user: "postgres"
+    postgres_user: "postgres",
+    installation_name: "ThePowerChat"
   },
   config: {
     domains: [
@@ -34,6 +35,9 @@ export const thePowerChatTemplate: CompleteTemplate = {
     env: {
       NODE_ENV: "production",
       RAILS_ENV: "production",
+      INSTALLATION_NAME: "${installation_name}",
+      FORCE_SSL: "true",
+      RAILS_MAX_THREADS: "5",
       POSTGRES_USER: "${postgres_user}",
       POSTGRES_PASSWORD: "${postgres_password}",
       REDIS_PASSWORD: "${redis_password}",
@@ -50,7 +54,7 @@ export const thePowerChatCompose = `version: '3.8'
 services:
   rails:
     build:
-      context: https://github.com/GtrhSystems/telechat.git#feature/dokploy-migration
+      context: https://github.com/GtrhSystems/teleya.git
       dockerfile: docker/Dockerfile
       args:
         BUNDLE_WITHOUT: 'development:test'
@@ -67,6 +71,9 @@ services:
       - RAILS_ENV=production
       - RAILS_LOG_TO_STDOUT=true
       - PORT=3000
+      - INSTALLATION_NAME=\${INSTALLATION_NAME}
+      - FORCE_SSL=\${FORCE_SSL}
+      - RAILS_MAX_THREADS=\${RAILS_MAX_THREADS}
       - POSTGRES_HOST=postgres
       - POSTGRES_USERNAME=\${POSTGRES_USER}
       - POSTGRES_PASSWORD=\${POSTGRES_PASSWORD}
@@ -80,7 +87,7 @@ services:
 
   sidekiq:
     build:
-      context: https://github.com/GtrhSystems/telechat.git#feature/dokploy-migration
+      context: https://github.com/GtrhSystems/teleya.git
       dockerfile: docker/Dockerfile
       args:
         BUNDLE_WITHOUT: 'development:test'

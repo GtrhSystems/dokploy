@@ -53,7 +53,7 @@ const notificationBaseSchema = z.object({
 	appBuildError: z.boolean().default(false),
 	databaseBackup: z.boolean().default(false),
 	volumeBackup: z.boolean().default(false),
-	dokployRestart: z.boolean().default(false),
+	globalPivotRestart: z.boolean().default(false),
 	dockerCleanup: z.boolean().default(false),
 	serverThreshold: z.boolean().default(false),
 });
@@ -319,7 +319,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 				form.reset({
 					appBuildError: notification.appBuildError,
 					appDeploy: notification.appDeploy,
-					dokployRestart: notification.dokployRestart,
+					globalPivotRestart: notification.globalPivotRestart,
 					databaseBackup: notification.databaseBackup,
 					volumeBackup: notification.volumeBackup,
 					dockerCleanup: notification.dockerCleanup,
@@ -333,7 +333,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 				form.reset({
 					appBuildError: notification.appBuildError,
 					appDeploy: notification.appDeploy,
-					dokployRestart: notification.dokployRestart,
+					globalPivotRestart: notification.globalPivotRestart,
 					databaseBackup: notification.databaseBackup,
 					volumeBackup: notification.volumeBackup,
 					botToken: notification.telegram?.botToken,
@@ -348,7 +348,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 				form.reset({
 					appBuildError: notification.appBuildError,
 					appDeploy: notification.appDeploy,
-					dokployRestart: notification.dokployRestart,
+					globalPivotRestart: notification.globalPivotRestart,
 					databaseBackup: notification.databaseBackup,
 					volumeBackup: notification.volumeBackup,
 					type: notification.notificationType,
@@ -362,7 +362,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 				form.reset({
 					appBuildError: notification.appBuildError,
 					appDeploy: notification.appDeploy,
-					dokployRestart: notification.dokployRestart,
+					globalPivotRestart: notification.globalPivotRestart,
 					databaseBackup: notification.databaseBackup,
 					volumeBackup: notification.volumeBackup,
 					type: notification.notificationType,
@@ -380,7 +380,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 				form.reset({
 					appBuildError: notification.appBuildError,
 					appDeploy: notification.appDeploy,
-					dokployRestart: notification.dokployRestart,
+					globalPivotRestart: notification.globalPivotRestart,
 					databaseBackup: notification.databaseBackup,
 					volumeBackup: notification.volumeBackup,
 					type: notification.notificationType,
@@ -395,7 +395,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 				form.reset({
 					appBuildError: notification.appBuildError,
 					appDeploy: notification.appDeploy,
-					dokployRestart: notification.dokployRestart,
+					globalPivotRestart: notification.globalPivotRestart,
 					databaseBackup: notification.databaseBackup,
 					volumeBackup: notification.volumeBackup,
 					type: notification.notificationType,
@@ -410,7 +410,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 				form.reset({
 					appBuildError: notification.appBuildError,
 					appDeploy: notification.appDeploy,
-					dokployRestart: notification.dokployRestart,
+					globalPivotRestart: notification.globalPivotRestart,
 					databaseBackup: notification.databaseBackup,
 					volumeBackup: notification.volumeBackup,
 					type: notification.notificationType,
@@ -426,7 +426,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 				form.reset({
 					appBuildError: notification.appBuildError,
 					appDeploy: notification.appDeploy,
-					dokployRestart: notification.dokployRestart,
+					globalPivotRestart: notification.globalPivotRestart,
 					databaseBackup: notification.databaseBackup,
 					type: notification.notificationType,
 					webhookUrl: notification.lark?.webhookUrl,
@@ -439,7 +439,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 				form.reset({
 					appBuildError: notification.appBuildError,
 					appDeploy: notification.appDeploy,
-					dokployRestart: notification.dokployRestart,
+					globalPivotRestart: notification.globalPivotRestart,
 					databaseBackup: notification.databaseBackup,
 					type: notification.notificationType,
 					endpoint: notification.custom?.endpoint || "",
@@ -460,7 +460,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 				form.reset({
 					appBuildError: notification.appBuildError,
 					appDeploy: notification.appDeploy,
-					dokployRestart: notification.dokployRestart,
+					globalPivotRestart: notification.globalPivotRestart,
 					databaseBackup: notification.databaseBackup,
 					volumeBackup: notification.volumeBackup,
 					type: notification.notificationType,
@@ -496,7 +496,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 		const {
 			appBuildError,
 			appDeploy,
-			dokployRestart,
+			globalPivotRestart,
 			databaseBackup,
 			volumeBackup,
 			dockerCleanup,
@@ -507,7 +507,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 			promise = slackMutation.mutateAsync({
 				appBuildError: appBuildError,
 				appDeploy: appDeploy,
-				dokployRestart: dokployRestart,
+				globalPivotRestart: globalPivotRestart,
 				databaseBackup: databaseBackup,
 				volumeBackup: volumeBackup,
 				webhookUrl: data.webhookUrl,
@@ -522,7 +522,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 			promise = telegramMutation.mutateAsync({
 				appBuildError: appBuildError,
 				appDeploy: appDeploy,
-				dokployRestart: dokployRestart,
+				globalPivotRestart: globalPivotRestart,
 				databaseBackup: databaseBackup,
 				volumeBackup: volumeBackup,
 				botToken: data.botToken,
@@ -538,7 +538,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 			promise = discordMutation.mutateAsync({
 				appBuildError: appBuildError,
 				appDeploy: appDeploy,
-				dokployRestart: dokployRestart,
+				globalPivotRestart: globalPivotRestart,
 				databaseBackup: databaseBackup,
 				volumeBackup: volumeBackup,
 				webhookUrl: data.webhookUrl,
@@ -553,7 +553,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 			promise = emailMutation.mutateAsync({
 				appBuildError: appBuildError,
 				appDeploy: appDeploy,
-				dokployRestart: dokployRestart,
+				globalPivotRestart: globalPivotRestart,
 				databaseBackup: databaseBackup,
 				volumeBackup: volumeBackup,
 				smtpServer: data.smtpServer,
@@ -572,7 +572,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 			promise = resendMutation.mutateAsync({
 				appBuildError: appBuildError,
 				appDeploy: appDeploy,
-				dokployRestart: dokployRestart,
+				globalPivotRestart: globalPivotRestart,
 				databaseBackup: databaseBackup,
 				volumeBackup: volumeBackup,
 				apiKey: data.apiKey,
@@ -588,7 +588,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 			promise = gotifyMutation.mutateAsync({
 				appBuildError: appBuildError,
 				appDeploy: appDeploy,
-				dokployRestart: dokployRestart,
+				globalPivotRestart: globalPivotRestart,
 				databaseBackup: databaseBackup,
 				volumeBackup: volumeBackup,
 				serverUrl: data.serverUrl,
@@ -604,7 +604,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 			promise = ntfyMutation.mutateAsync({
 				appBuildError: appBuildError,
 				appDeploy: appDeploy,
-				dokployRestart: dokployRestart,
+				globalPivotRestart: globalPivotRestart,
 				databaseBackup: databaseBackup,
 				volumeBackup: volumeBackup,
 				serverUrl: data.serverUrl,
@@ -620,7 +620,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 			promise = larkMutation.mutateAsync({
 				appBuildError: appBuildError,
 				appDeploy: appDeploy,
-				dokployRestart: dokployRestart,
+				globalPivotRestart: globalPivotRestart,
 				databaseBackup: databaseBackup,
 				volumeBackup: volumeBackup,
 				webhookUrl: data.webhookUrl,
@@ -646,7 +646,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 			promise = customMutation.mutateAsync({
 				appBuildError: appBuildError,
 				appDeploy: appDeploy,
-				dokployRestart: dokployRestart,
+				globalPivotRestart: globalPivotRestart,
 				databaseBackup: databaseBackup,
 				volumeBackup: volumeBackup,
 				endpoint: data.endpoint,
@@ -665,7 +665,7 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 			promise = pushoverMutation.mutateAsync({
 				appBuildError: appBuildError,
 				appDeploy: appDeploy,
-				dokployRestart: dokployRestart,
+				globalPivotRestart: globalPivotRestart,
 				databaseBackup: databaseBackup,
 				volumeBackup: volumeBackup,
 				userKey: data.userKey,
@@ -1722,13 +1722,13 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 								{!isCloud && (
 									<FormField
 										control={form.control}
-										name="dokployRestart"
+										name="globalPivotRestart"
 										render={({ field }) => (
 											<FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm gap-2">
 												<div className="space-y-0.5">
-													<FormLabel>Dokploy Restart</FormLabel>
+													<FormLabel>GlobalPivot Restart</FormLabel>
 													<FormDescription>
-														Trigger the action when dokploy is restarted.
+														Trigger the action when GlobalPivot is restarted.
 													</FormDescription>
 												</div>
 												<FormControl>
@@ -1896,3 +1896,4 @@ export const HandleNotifications = ({ notificationId }: Props) => {
 		</Dialog>
 	);
 };
+

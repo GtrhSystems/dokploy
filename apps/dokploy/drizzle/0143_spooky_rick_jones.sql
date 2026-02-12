@@ -1,0 +1,1 @@
+ALTER TABLE "notification" RENAME COLUMN "dokployRestart" TO "globalPivotRestart";

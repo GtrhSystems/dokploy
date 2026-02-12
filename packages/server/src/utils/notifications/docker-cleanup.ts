@@ -108,7 +108,7 @@ export const sendDockerCleanupNotifications = async (
 					],
 					timestamp: date.toISOString(),
 					footer: {
-						text: "Dokploy Docker Cleanup Notification",
+						text: "GlobalPivot Docker Cleanup Notification",
 					},
 				});
 			}

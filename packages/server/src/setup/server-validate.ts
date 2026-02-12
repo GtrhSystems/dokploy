@@ -71,11 +71,11 @@ export const validateMainDirectory = () => `
   fi
 `;
 
-export const validateDokployNetwork = () => `
-  if docker network ls | grep -q 'dokploy-network'; then
-	echo true
+export const validateGlobalPivotNetwork = () => `
+  if docker network ls | grep -q 'globalpivot-network'; then
+    echo true
   else
-	echo false
+    echo false
   fi
 `;
 
@@ -114,7 +114,7 @@ export const serverValidate = async (serverId: string) => {
           buildpacksVersion=$(echo $buildpacksVersionEnabled | awk '{print $1}')
           buildpacksEnabled=$(echo $buildpacksVersionEnabled | awk '{print $2}')
 
-          isDokployNetworkInstalled=$(${validateDokployNetwork()})
+          isGlobalPivotNetworkInstalled=$(${validateGlobalPivotNetwork()})
           isSwarmInstalled=$(${validateSwarm()})
           isMainDirectoryInstalled=$(${validateMainDirectory()})
 

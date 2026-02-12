@@ -150,10 +150,10 @@ export const Verify = () => {
 											}
 										/>
 										<StatusRow
-											label="Dokploy Network Created"
-											isEnabled={data?.isDokployNetworkInstalled}
+											label="GlobalPivot Network Created"
+											isEnabled={data?.isGlobalPivotNetworkInstalled}
 											description={
-												data?.isDokployNetworkInstalled
+												data?.isGlobalPivotNetworkInstalled
 													? "Created"
 													: "Not Created"
 											}

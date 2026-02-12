@@ -85,12 +85,11 @@ export const WelcomeSuscription = () => {
 
 				<DialogHeader>
 					<DialogTitle className="text-2xl text-center">
-						Welcome To Dokploy Cloud 🎉
+						Welcome To GlobalPivot Cloud 🎉
 					</DialogTitle>
-					<DialogDescription className="text-center max-w-xl mx-auto">
-						Thank you for choosing Dokploy Cloud! 🚀 We're excited to have you
-						onboard. Before you dive in, you'll need to configure your remote
-						server to unlock all the features we offer.
+					<DialogDescription className="text-center">
+						GlobalPivot Cloud is a managed service that allows you to deploy your
+						applications to your own servers.
 					</DialogDescription>
 				</DialogHeader>
 				<div className="grid gap-4">
@@ -186,7 +185,7 @@ export const WelcomeSuscription = () => {
 											</li>
 											<li>
 												<a
-													href=" https://app.americancloud.com/register?ref=dokploy"
+													href=" https://app.americancloud.com/register?ref=globalpivot"
 													className="text-link underline"
 												>
 													American Cloud - Get $20 Credits
@@ -301,7 +300,7 @@ export const WelcomeSuscription = () => {
 												that your server can handle?
 											</p>
 											<p className="text-muted-foreground">
-												Here are some of the things you can do with Dokploy
+												Here are some of the things you can do with GlobalPivot
 												Cloud:
 											</p>
 										</div>
@@ -333,8 +332,8 @@ export const WelcomeSuscription = () => {
 											<div className="flex flex-row gap-4">
 												<Button className="rounded-full bg-[#5965F2] hover:bg-[#4A55E0] w-fit">
 													<Link
-														href="https://discord.gg/2tBnJ3jDJc"
-														aria-label="Dokploy on GitHub"
+														href="#"
+														aria-label="GlobalPivot on Discord"
 														target="_blank"
 														className="flex flex-row items-center gap-2 text-white"
 													>
@@ -351,8 +350,8 @@ export const WelcomeSuscription = () => {
 												</Button>
 												<Button className="rounded-full  w-fit">
 													<Link
-														href="https://github.com/Dokploy/dokploy"
-														aria-label="Dokploy on GitHub"
+														href="#"
+														aria-label="GlobalPivot on GitHub"
 														target="_blank"
 														className="flex flex-row items-center gap-2 "
 													>
@@ -366,8 +365,8 @@ export const WelcomeSuscription = () => {
 													variant="outline"
 												>
 													<Link
-														href="https://docs.dokploy.com/docs/core"
-														aria-label="Dokploy Docs"
+														href="#"
+														aria-label="GlobalPivot Docs"
 														target="_blank"
 														className="flex flex-row items-center gap-2 "
 													>

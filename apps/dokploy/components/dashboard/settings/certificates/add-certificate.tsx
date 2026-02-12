@@ -90,7 +90,7 @@ export const AddCertificate = () => {
 			certificateData: data.certificateData,
 			privateKey: data.privateKey,
 			autoRenew: data.autoRenew,
-			serverId: data.serverId === "dokploy" ? undefined : data.serverId,
+			serverId: data.serverId === "globalpivot" ? undefined : data.serverId,
 			organizationId: "",
 		})
 			.then(async () => {
@@ -199,20 +199,20 @@ export const AddCertificate = () => {
 										<Select
 											onValueChange={field.onChange}
 											defaultValue={
-												field.value || (!isCloud ? "dokploy" : undefined)
+												field.value || (!isCloud ? "globalpivot" : undefined)
 											}
 										>
 											<SelectTrigger>
 												<SelectValue
-													placeholder={!isCloud ? "Dokploy" : "Select a Server"}
+													placeholder={!isCloud ? "GlobalPivot" : "Select a Server"}
 												/>
 											</SelectTrigger>
 											<SelectContent>
 												<SelectGroup>
 													{!isCloud && (
-														<SelectItem value="dokploy">
+														<SelectItem value="globalpivot">
 															<span className="flex items-center gap-2 justify-between w-full">
-																<span>Dokploy</span>
+																<span>GlobalPivot</span>
 																<span className="text-muted-foreground text-xs self-center">
 																	Default
 																</span>

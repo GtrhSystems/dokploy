@@ -40,7 +40,7 @@ const MyApp = ({
 				`}
 			</style>
 			<Head>
-				<title>Dokploy</title>
+				<title>GlobalPivot</title>
 			</Head>
 			<ThemeProvider
 				attribute="class"

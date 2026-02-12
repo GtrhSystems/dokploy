@@ -16,12 +16,12 @@ export default function Custom404({ statusCode, error }: Props) {
 				<header className="mb-auto flex justify-center z-50 w-full py-4">
 					<nav className="px-4 sm:px-6 lg:px-8" aria-label="Global">
 						<Link
-							href="https://dokploy.com"
+							href="#"
 							target="_blank"
 							className="flex flex-row items-center gap-2"
 						>
 							<Logo />
-							<span className="font-medium text-sm">Dokploy</span>
+							<span className="font-medium text-sm">GlobalPivot</span>
 						</Link>
 					</nav>
 				</header>
@@ -81,11 +81,10 @@ export default function Custom404({ statusCode, error }: Props) {
 					<div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
 						<p className="text-sm text-gray-500">
 							<Link
-								href="https://github.com/Dokploy/dokploy/issues"
-								target="_blank"
+								href="#"
 								className="underline hover:text-primary transition-colors"
 							>
-								Submit Log in issue on Github
+								Contact Support
 							</Link>
 						</p>
 					</div>

@@ -129,7 +129,7 @@ export const UpdateServer = ({
 			<DialogContent className="max-w-lg">
 				<div className="flex items-center justify-between mb-8">
 					<DialogTitle className="text-2xl font-semibold">
-						Web Server Update
+						Update GlobalPivot
 					</DialogTitle>
 					{dokployVersion && (
 						<div className="flex items-center gap-1.5 rounded-full px-3 py-1 mr-2 bg-muted">
@@ -145,7 +145,7 @@ export const UpdateServer = ({
 				{!hasCheckedUpdate && (
 					<div className="mb-8">
 						<p className="text text-muted-foreground">
-							Check for new releases and update Dokploy.
+							Check for new releases and update GlobalPivot.
 							<br />
 							<br />
 							We recommend checking for updates regularly to ensure you have the

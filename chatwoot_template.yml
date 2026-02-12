@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dokploy Blueprints</title>
+    <script type="module" crossorigin src="/assets/index-BpFTidWm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B3mV4A2L.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  <!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2cf88add09da4dc29a2b07fe3af07875"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>

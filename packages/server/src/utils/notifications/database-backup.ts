@@ -84,7 +84,7 @@ export const sendDatabaseBackupNotifications = async ({
 				if (email) {
 					await sendEmailNotification(
 						email,
-						"Database backup for dokploy",
+						"Database backup for GlobalPivot",
 						template,
 					);
 				}
@@ -92,7 +92,7 @@ export const sendDatabaseBackupNotifications = async ({
 				if (resend) {
 					await sendResendNotification(
 						resend,
-						"Database backup for dokploy",
+						"Database backup for GlobalPivot",
 						template,
 					);
 				}
@@ -157,7 +157,7 @@ export const sendDatabaseBackupNotifications = async ({
 					],
 					timestamp: date.toISOString(),
 					footer: {
-						text: "Dokploy Database Backup Notification",
+						text: "GlobalPivot Database Backup Notification",
 					},
 				});
 			}
