@@ -220,7 +220,7 @@ export const createDefaultServerTraefikConfig = () => {
 	}
 
 	const appName = "dokploy";
-	const serviceURLDefault = `http://${appName}:${process.env.PORT || 3000}`;
+	const serviceURLDefault = `http://${appName}:${process.env.PORT || 3002}`;
 	const config: FileConfig = {
 		http: {
 			routers: {
